@@ -14,11 +14,11 @@
     <textarea id="target" rows="20" cols="80"></textarea>
 
     <script type="text/javascript">
-        let target = document.getElementById('target');
+        let target = document.getElementById('target'); // funziona solo con gli ID
 
         // string
         let name = 'Bob';
-        target.value += 'hello ' + name + '\n';
+        target.value += 'hello ' + name + '\n';  //+= concatena stringhe ma se ci fossero stati numeri avrebbe sommato
 
         // number
         let value = 42;

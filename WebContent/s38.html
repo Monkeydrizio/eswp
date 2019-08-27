@@ -40,6 +40,20 @@
 
         check = value != '2';
         target.value += check + '\n';
+        
+        let michele = [1, 2, 3, 4, 5];
+        console.log(michele);
+        let emanuele = [];
+       for(let i=0; i<michele.length; i++){
+    	   if (i===3){
+    		   continue;
+    	   }
+    	   emanuele.push(michele[i]);
+       } 
+       console.log(emanuele);
+       emanuele.splice(0,1);
+       console.log(emanuele);
+       
     </script>
 </body>
 </html>

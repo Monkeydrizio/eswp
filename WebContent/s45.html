@@ -16,13 +16,13 @@
         <button onclick="getTextDetailed();">Get text w/ details</button>
     </div>
 
-    <script type="text/javascript">
+    <script type="text/javascript">  // INZIARE A LEGGERE I COMMENTI IN BASSO
         function callback() {
             let target = document.getElementById('target');
 
         	try {
-                switch (this.readyState) {
-                case XMLHttpRequest.OPENED:
+                switch (this.readyState) { // this come in Java richiama l'ogetto corrente, che in qst caso è XHR data l'associanzione fatta con request.onload = callback
+                case XMLHttpRequest.OPENED:  // STATI DI XHR durante il processo di chiamata e risposta
                     target.value += "[Server connection established]\n";
                     return;
                 case XMLHttpRequest.HEADERS_RECEIVED:
@@ -44,7 +44,7 @@
 	            return;
             }
 
-            if (this.status != 200) {
+            if (this.status != 200) {  // 200 significa che lo scambio è andato bene (il contrario della 404)
                 target.value += "[Something went wrong: " + this.status + "]\n";
                 return;
             }
@@ -53,18 +53,19 @@
         }
 
         function getTextDetailed() {
-            let request = new XMLHttpRequest();
-            request.onreadystatechange = callback;
+            let request = new XMLHttpRequest(); // XHR per gli amici
+            request.onreadystatechange = callback; // passo la risposta a callback (4) qui vedo tutte le tappe intermedie
             request.open("GET", "/eswp/s45.txt");
             request.send();
         }
 
         function getText() {
-            let request = new XMLHttpRequest();
-            request.onload = callback;
-            request.open("GET", "/eswp/s45.txt");
-            request.send();
+            let request = new XMLHttpRequest(); // XHR gestisce la chiamata, è l'intermediario (3)
+            request.onload = callback; // passo la risposta a callback (4) Associando la funzione callback alla proprietà di request onload, ma request è XHR quindi callback diventa una proprietà di XHR
+            request.open("GET", "/eswp/s45.txt"); // prepara la chiamata al server (1)
+            request.send();  // effettua la chiamata (2)
         }
+        
     </script>
 </body>
 </html>

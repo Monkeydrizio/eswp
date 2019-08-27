@@ -4,6 +4,6 @@
  * Example from Slide 33
  */
 
-let heading = document.querySelector('h2');
-h2.textContent = 'Hello!';
+let header = document.querySelector('h2');
+header.textContent = 'Hello!';
 console.log('hello!');
