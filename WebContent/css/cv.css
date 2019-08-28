@@ -1,17 +1,22 @@
-body {
+body {	
 	background-color: black;
 	color: white;	
 	font-family: sans-serif;
 }
 
-h1 {
+.myname {
 	color: red;
-	font-family: BankGothic;
+	font-family: century;
+	background-color: blue;
 }
 
-div{
-	margin: 0 auto;
+.engineer{
+	color: white;
+	font-family: century;
+	background-color: blue;
 }
+
+
 
 #linkedin{
 	margin: 3px;
